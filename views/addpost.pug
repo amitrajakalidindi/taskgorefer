@@ -1,0 +1,48 @@
+doctype html
+html 
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(http-equiv='x-ua-compatible' content='ie=edge')
+
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+        script(src='https://kit.fontawesome.com/a076d05399.js')
+        title='taskGoRefer'
+    body(style="font-family: 'Inter var',sans-serif")
+        nav(class='navbar navbar-expand-lg fixed-top d-flex justify-content-between' style='background-color: #F5F5F5')
+            div
+                a(class='navbar-brand text-dark' href='/')
+                    h3='taskGoRefer'
+            div
+                form(class='form-inline mr-auto' action='/search' method='get')
+                    div(class='input-group')
+                        input(class='form-control' type='search' placeholder='Search name or location' name='searchItem' aria-label='Search' aria-describedby='button-addon2' style='height: 50px; width:400px; border-color:black; border-width:3px' required)
+                        div(class='input-group-append')
+                            button(class='btn btn-dark' id='button-addon2' type='submit')
+                                i(class='fas fa-search' style='font-size:24px')
+            div
+                button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+                    span(class='navbar-toggler-icon')
+                div(class='collapse navbar-collapse' id='collapsibleNavbar')
+                    ul(class='navbar-nav')
+                        li(class='nav-item mr-5')
+                            a(href='#' class='btn btn-outline-dark' style='border-width:3px; border-radius:20px')='+ Post'
+        div(class='container col-12 col-sm-6 offset-sm-3 shadow p-3 mb-5 bg-white rounded' style='margin-top:100px')
+            h1(style='text-align:center')='POST'
+            form(action='/addpost' method='post' style='margin-top:50px')
+                h4(class='mt-5')='ADD DETAILS'
+                div(class='form-group col-sm-10 offset-sm-1')
+                    label(for='name' class='col-form-label')='Name'
+                    input(type='text' class='form-control form-control-lg' id='name' placeholder='Enter name' name='name' required)
+                div(class='form-group col-sm-10 offset-sm-1')
+                    label(for='location' class='col-form-label')='Location'
+                    input(type='text' class='form-control form-control-lg' id='price' placeholder='Enter location' name='location' required)
+                div(class='form-group col-sm-10 offset-sm-1')
+                    label(for='description' class='col-form-label')='Description'
+                    textarea(type='text' class='form-control form-control-lg' id='description' placeholder='Enter description' name='description' required) 
+                div(class='d-flex justify-content-center pt-sm-3' style='padding-bottom:50px')
+                    button(type='submit' class='btn btn-dark')='Post'
+        
